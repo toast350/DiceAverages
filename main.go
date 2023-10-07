@@ -37,6 +37,14 @@ func main() {
 	counters = append(counters[1:]) // this is done because the code is stupid
 
 	for i := 0; i < len(counters); i++ {
-		fmt.Printf("%v: %v%%\n", i+1, float64(len(counters[i]))/(float64(diceSides)*float64(diceSides)/10.0)*10)
+		fmt.Printf("%v: %.3f%%\n", i+1, float64(len(counters[i]))/(float64(diceSides)*float64(diceSides)/10.0)*10)
 	}
+
+	total := 0.0
+	for i := 0; i < len(theSliceWithTheNumbers); i++ {
+		total += float64(theSliceWithTheNumbers[i])
+	}
+	average := total / (float64(diceSides*diceSides) / 10.0) / 10.0
+
+	fmt.Printf("The average is %.3f\n", average)
 }
