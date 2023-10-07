@@ -34,9 +34,9 @@ func main() {
 	for i := 0; i < len(theSliceWithTheNumbers); i++ {
 		counters[theSliceWithTheNumbers[i]] = append(counters[theSliceWithTheNumbers[i]], theSliceWithTheNumbers[i])
 	}
-	counters = append(counters[1:])
+	counters = append(counters[1:]) // this is done because the code is stupid
 
 	for i := 0; i < len(counters); i++ {
-		fmt.Printf("%v: %v\n", i+1, len(counters[i]))
+		fmt.Printf("%v: %v%%\n", i+1, float64(len(counters[i]))/(float64(diceSides)*float64(diceSides)/10.0)*10)
 	}
 }
